@@ -1,0 +1,26 @@
+{
+  "projects": {
+    "default": "ncanpass-pruduct"
+  },
+  "targets": {
+    "ncanpass-pruduct": {
+      "hosting": {
+        "pruduct-site": [
+          "ncanpass-pruduct"
+        ],
+        "chat-site": [
+          "ncanpass-chat"
+        ],
+        "department-site": [
+          "ncanpass-department"
+        ],
+        "scan-site": [
+          "ncanpass-scan"
+        ],
+        "total-site": [
+          "ncanpass-total"
+        ]
+      }
+    }
+  }
+}

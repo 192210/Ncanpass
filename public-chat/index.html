@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+  <header>
+    <link rel="stylesheet" href="message.css">
+    <meta charset="UTF-8">
+    <h2><a>Ncanpass</a></h2>
+    <ul class="menu">
+      <li><a href="https://ncanpass-department.web.app/index.html">ブース</a></li>
+      <li><a  href="https://ncanpass-chat.web.app/index.html">チャット</a></li>
+      <li><a  href="https://ncanpass-scan.web.app/index.html">スキャン</a></li>
+      <li><a  href="https://ncanpass-total.web.app/index.html">集計</a></li>
+    </ul>
+</header>
+</html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>チャット</title>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first-->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhbCuNmObTff_CSthtaLMzjgw1hkbnLOs",
+    authDomain: "realtimedatabasetest1201.firebaseapp.com",
+    databaseURL: "https://realtimedatabasetest1201.firebaseio.com",
+    projectId: "realtimedatabasetest1201",
+    storageBucket: "realtimedatabasetest1201.appspot.com",
+    messagingSenderId: "168448983490",
+    appId: "1:168448983490:web:3ed94f24ecaef9c83b965b",
+    measurementId: "G-MH2K0YJTPJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+</script>
+
+   <link rel="stylesheet" href="message.css">
+</head>
+<main>
+<div class="wrapper">
+  <div class="left">
+    <p>ブース名<br>
+       <select id="nfcId">
+         <option>ゲーム</option>
+         <option>CG</option>
+         <option>WEB</option>
+         <option>CAD</option>
+         <option>IT</option>
+         <option>スペシャル</option>
+         <option>運営</option>
+       </select>
+         <p>メッセージ<br>
+           <textarea type="text" id="prace" ></textarea>
+         <p><button id="send">送信</button></p>  
+  </div>
+</div>
+<div class="main">
+       <div id="output">
+        <script src="./message.js"></script>
+       </div>
+</div>
+
+</main>
+</html>

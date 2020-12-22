@@ -1,0 +1,55 @@
+/* 基本装飾 */
+header{
+    width: 100%;
+    height: 25px;
+    padding: 30px 4% 10px;
+    background-color: #434343;
+    top: 0;
+    display: flex;
+    align-items: center;
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .menu{
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+  li{
+    margin: 0 0 0 30px;
+    font-size: 14px;
+  }
+  #contents {
+       display:inline-block;
+     position:relative;
+     /*background-color:white;*/
+     border-radius:10px;
+     padding:10px;
+     margin:0 0 0 10px;
+     
+    }
+    
+    body{
+      font-size: 15px;
+    }
+  
+    /*人数*/
+    .post_li {
+      height: 200px;
+      width: 200px;
+      margin: 0 0 20px;
+      background-color: #fff;
+  }
+  .center{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  h3{
+    color: #364e96;/*文字色*/
+    padding: 0.5em 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+  }
+  

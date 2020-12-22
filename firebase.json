@@ -1,0 +1,46 @@
+{
+  "rulesFile": "database.rules.json",
+  "hosting": [
+      {
+    "target":"pruduct-site",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },{
+      "target":"chat-site",
+     "public": "public-chat",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ] 
+  },{
+      "target":"department-site",
+      "public": "public-department",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },{
+      "target":"scan-site",
+      "public": "public-scan",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },{
+      "target":"total-site",
+      "public": "public-total",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+  ]
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>ブース</title>
+         <!-- The core Firebase JS SDK is always required and must be listed first-->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhbCuNmObTff_CSthtaLMzjgw1hkbnLOs",
+    authDomain: "realtimedatabasetest1201.firebaseapp.com",
+    databaseURL: "https://realtimedatabasetest1201.firebaseio.com",
+    projectId: "realtimedatabasetest1201",
+    storageBucket: "realtimedatabasetest1201.appspot.com",
+    messagingSenderId: "168448983490",
+    appId: "1:168448983490:web:3ed94f24ecaef9c83b965b",
+    measurementId: "G-MH2K0YJTPJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>  
+  <header>
+      <link rel="stylesheet" href="ninzu.css">
+      <meta charset="UTF-8">
+      <h2><a>Ncanpass</a></h2>
+      <ul class="menu">
+        <li><a href="https://ncanpass-department.web.app/index.html">ブース</a></li>
+        <li><a  href="https://ncanpass-chat.web.app/index.html">チャット</a></li>
+        <li><a  href="https://ncanpass-scan.web.app/index.html">スキャン</a></li>
+        <li><a  href="https://ncanpass-total.web.app/index.html">集計</a></li>
+      </ul>
+  </header>
+
+  <body>
+    <div class="center">
+      <li class="post_li" id="post1" style="color: white;">
+        <h3>ゲーム</h3>
+        <div id="output01" class="output01" style="color: black;"></div>
+      </li>
+      <li class="post_li" id="post2" style="color: white;">
+        <h3>CG</h3>
+        <div id="output02" class="output02" style="color: black;"></div>
+      </li>
+      <li class="post_li" id="post3" style="color: white;">
+        <h3>WEB</h3>
+        <div id="output03" class="output03" style="color: black;"></div>
+      </li>
+      </div>
+      <div class="center">
+      <li class="post_li" id="post4" style="color: white;">
+        <h3>CAD</h3>
+        <div id="output04" class="output04" style="color: black;"></div>
+      </li>
+      <li class="post_li" id="post5" style="color: white;">
+        <h3>IT</h3>
+        <div id="output05" class="output05" style="color: black;"></div>
+      </li>
+      <li class="post_li" id="post-6" style="color: white;">
+        <h3>スペシャル</h3>
+        <div id="output06" class="output06" style="color: black;"></div>
+      </li>
+      </div>
+
+    <script>
+      var database = firebase.database();
+      let room = "NFC-data";
+      const gameOutput = document.getElementById("output01");
+      const cgOutput = document.getElementById("output02");
+      const webOutput = document.getElementById("output03");
+      const cadOutput = document.getElementById("output04");
+      const itOutput = document.getElementById("output05");
+      const specialOutput = document.getElementById("output06");
+
+
+      var gameNum = 0;
+      var cgNum = 0;
+      var webNum = 0;
+      var cadNum = 0;
+      var itNum = 0;
+      var specialNum = 0;
+
+      var snapdata;
+
+      database.ref(room).on('value', (snapshot) =>{
+      snapdata = snapshot.val();
+    });
+
+      database.ref(room).on("child_added",function(data){
+      const v = data.val();
+      const k = data.key;
+      if (v.prace == "Game") {
+        gameNum += 1;
+      }else if(v.prace == "CG"){
+        cgNum += 1;
+      }else if(v.prace == "Web"){
+        webNum += 1;
+      }else if(v.prace == "CAD"){
+        cadNum += 1;
+      }else if(v.prace == "IT"){
+        itNum += 1;
+      }else if(v.prace == "Special"){
+        specialNum += 1;
+      }
+
+   gameOutput.innerHTML = String(gameNum);
+   cgOutput.innerHTML = String(cgNum);
+   webOutput.innerHTML = String(webNum);
+   cadOutput.innerHTML = String(cadNum);
+   itOutput.innerHTML = String(itNum);
+   specialOutput.innerHTML = String(specialNum);
+    });
+
+    </script>
+  </body>
+</html>
